@@ -1,0 +1,92 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+    text-align: center;
+    overflow: hidden;
+}
+
+div#pointer {
+    position: absolute;
+    width: 100%;
+    top: 240px;
+    left: 0px;
+}
+    
+div#pointer span:first-child {
+   text-align: right;
+   padding-right: 180px;
+}
+
+div#pointer span:last-child {
+   text-align: left;
+   padding-left: 180px;
+}   
+    
+ul {
+    position: relative;
+    top: 0px;
+    list-style-type: none;
+    margin: 0px auto;
+    padding: 0px;
+    width: 400px;
+    transition: top 10s cubic-bezier(0.000, 1.005, 0.000, 1.005);
+}  
+
+ul li {
+    height: 70px;
+    line-height: 70px;
+}   
+    
+.winner {
+    font-weight: bold;
+}
+
+div#popup {
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    width: 500px;
+    margin: 0px auto;
+    border: 4px black solid;
+    background: linear-gradient(to bottom, rgba(255,0,0,1) 7%,rgba(0,255,0,1) 100%);
+    font-weight: bold;
+}
+
+div#popup div {
+    margin: -5px 30px;
+    background: black;
+    padding: 10px;
+    font-size: 1.3em;
+    color: #ff0000;
+}
+
+div#popup marquee:first-child {
+    color: #00ff00;
+}
+
+div#popup marquee:last-child {
+    position: relative;
+    top: 5px;
+    color: #ff0000;
+}
+
+div#popup div span:first-child {
+    font-size: 1.1em;
+}
+
+#winner {
+    font-size: 1.5em;
+    color: #0000ff;
+}
+
+.blink {
+    -webkit-animation: blinker 0.5s linear infinite alternate;
+}
+
+@-webkit-keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
