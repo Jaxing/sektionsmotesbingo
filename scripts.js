@@ -18,14 +18,17 @@ function bingo() {
     var random = Math.round(Math.random()*max + min);
     var winner = random+3;
     var winnerName = document.getElementsByTagName("li")[winner].innerText;
+
     console.log("Random: " + winner + " (" + (winner % likes.length) + ")");
     console.log("Winner: " + winnerName);
+    
     document.getElementsByTagName("ul")[0].style.top = (-random*70) + "px";
     document.getElementById("winner").innerHTML = winnerName;
 
     setTimeout(function() {
         document.getElementsByTagName("li")[winner].setAttribute("class", "winner");
     }, 10000);
+    
     setTimeout(function() {
         document.getElementById("popup").style.display = "block";
         document.body.style.color = "rgba(0, 0, 0, 0.2)";
