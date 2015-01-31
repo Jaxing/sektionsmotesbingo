@@ -5,5 +5,5 @@ Webbsida som slumpmässigt väljer en av de som gillat ett inlägg på facebook.
 
 Screenshots
 -----------
-<img src="screenshots/sektionsmotesbingo1.png" alt="Screenshot 1" style="width: 300px;"/>
-<img src="screenshots/sektionsmotesbingo2.png" alt="Screenshot 2" style="width: 300px;"/>
+<img src="screenshots/sektionsmotesbingo1.png" alt="Screenshot 1" width="300" />
+<img src="screenshots/sektionsmotesbingo2.png" alt="Screenshot 2" width="300" />
