@@ -7,7 +7,7 @@ function loadpage() {
         }
     }
 
-    setTimeout(bingo, 2000);
+    setTimeout(bingo, 1000);
 }
 
 function bingo() {

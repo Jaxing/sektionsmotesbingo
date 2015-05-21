@@ -36,17 +36,17 @@ foreach ($likes as $user) {
         <span>&lt;-----</span>
     </div>
     <div id="popup">
-        <marquee scrollamount="40" behavior="alternate">
+        <span class="scroller">
             WINNER!!!
-        </marquee>
+        </span>
         <div>
             <span class="blink">CONGRATULATION!!!!!!!!</span><br />
             <span id="winner"></span><br />
             YOU ARE THE 1,000,000th VISITOR!!!
         </div>
-        <marquee scrollamount="23" behavior="alternate">
+        <span class="scroller">
             WINNER!!!
-        </marquee>
+        </span>
     </div>
 </body>
 </html>

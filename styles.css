@@ -63,14 +63,20 @@ div#popup div {
     color: #ff0000;
 }
 
-div#popup marquee:first-child {
-    color: #00ff00;
+div#popup .scroller {
+    position: relative;
 }
 
-div#popup marquee:last-child {
-    position: relative;
-    top: 5px;
+div#popup .scroller:first-child {
+    top: -2px;
+    color: #00ff00;
+    -webkit-animation: scroller 1s linear infinite alternate;
+}
+
+div#popup .scroller:last-child {
+    top: 4px;
     color: #ff0000;
+    -webkit-animation: scroller 700ms linear infinite alternate;
 }
 
 div#popup div span:first-child {
@@ -89,4 +95,9 @@ div#popup div span:first-child {
 @-webkit-keyframes blinker {  
     from { opacity: 1; }
     to { opacity: 0.5; }
+}
+
+@-webkit-keyframes scroller {
+    from { left: -40%; }
+    to { left: 40%; }
 }
