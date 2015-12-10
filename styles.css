@@ -36,6 +36,7 @@ ul {
 ul li {
     height: 70px;
     line-height: 70px;
+    overflow: hidden;
 }   
     
 .winner {
