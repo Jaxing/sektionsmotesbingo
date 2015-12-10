@@ -7,7 +7,11 @@ $facebook = new Facebook(array(
 	'secret' => $secret
 ));
 
-$id = split("/", $_GET['url']);
+if (empty($_REQUEST)) {
+    die("No facebook url specified.");
+}
+
+$id = split("/", $_REQUEST['url']);
 if ($id[4] == "posts") {
     $id = $id[sizeof($id)-1];
 } else {
