@@ -11,7 +11,7 @@ if (empty($_REQUEST)) {
     die("No facebook url specified.");
 }
 
-$id = split("/", $_REQUEST['url']);
+$id = explode("/", $_REQUEST['url']);
 if ($id[4] == "posts") {
     $id = $id[sizeof($id)-1];
 } else {
@@ -30,7 +30,9 @@ foreach ($likes as $user) {
 	<title>Sektionsmötesbingo</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
-    <script>var likes = <?=json_encode($filtered)?>;</script>
+    <script>
+        var likes = JSON.parse('<?=json_encode($filtered)?>');
+    </script>
 	<script src="scripts.js"></script>
 </head>
 <body onload="loadpage();">
