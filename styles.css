@@ -71,13 +71,13 @@ div#popup .scroller {
 div#popup .scroller:first-child {
     top: -2px;
     color: #00ff00;
-    -webkit-animation: scroller 1s linear infinite alternate;
+    animation: scroller 1s linear infinite alternate;
 }
 
 div#popup .scroller:last-child {
     top: 4px;
     color: #ff0000;
-    -webkit-animation: scroller 700ms linear infinite alternate;
+    animation: scroller 700ms linear infinite alternate;
 }
 
 div#popup div span:first-child {
@@ -91,15 +91,15 @@ div#popup div span:first-child {
 }
 
 .blink {
-    -webkit-animation: blinker 0.5s linear infinite alternate;
+    animation: blinker 0.5s linear infinite alternate;
 }
 
-@-webkit-keyframes blinker {  
+@keyframes blinker {  
     from { opacity: 1; }
     to { opacity: 0.5; }
 }
 
-@-webkit-keyframes scroller {
+@keyframes scroller {
     from { left: -40%; }
     to { left: 40%; }
 }
