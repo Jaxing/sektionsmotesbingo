@@ -102,3 +102,37 @@ div#popup div span:first-child {
     from { left: -40%; }
     to { left: 40%; }
 }
+
+.fb-reaction {
+    width: 50px;
+    height: 50px;
+    background-image: url(facebookicons.gif);
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.fb-LIKE {
+    background-position: -62px -111px;
+}
+
+.fb-LOVE {
+    background-position: -124px -111px;
+}
+
+.fb-HAHA {
+    background-position: -186px -111px;
+
+}
+
+.fb-WOW {
+    background-position: -248px -111px;
+}
+
+.fb-SAD {
+    background-position: -308px -111px;
+}
+
+.fb-ANGRY {
+    background-position: -369px -111px;
+}
