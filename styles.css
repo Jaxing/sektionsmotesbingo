@@ -24,13 +24,17 @@ div#pointer span:last-child {
 }   
     
 ul {
-    position: relative;
+    /*position: relative;*/
     top: 0px;
     list-style-type: none;
     margin: 0px auto;
     padding: 0px;
     width: 400px;
-    transition: top 10s cubic-bezier(0.000, 1.005, 0.000, 1.005);
+    /*transition: transform 10s cubic-bezier(.39, .71, .41, 1.54);*/
+    /*transition: transform 10s cubic-bezier(0,1.68,.81,.56);*/
+    /*transition: transform 10s cubic-bezier(0.68,-0.55,0.265,1.55);*/
+    /*transition: transform 10s cubic-bezier(.82,-0.23,.41,1.52);*/
+    transition: transform 10s cubic-bezier(.76,1.62,.85,.71);
 }  
 
 ul li {
