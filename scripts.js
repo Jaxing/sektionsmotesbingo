@@ -21,7 +21,8 @@ window.fbAsyncInit = function() {
 
 
 function loadpage(likes) {
-    for (var i=0; i<10; i++) {
+    const repeatCount = Math.round(Math.max(100/likes.length, 2));
+    for (var i=0; i < repeatCount; i++) {
         for (var j=0; j<likes.length; j++) {
             var li = document.createElement("li");
             li.innerHTML = '<div class="fb-reaction fb-'+likes[j].type+'"></div>' + ' ' + likes[j].name;
@@ -29,26 +30,31 @@ function loadpage(likes) {
         }
     }
 
-    setTimeout(() => bingo(likes), 1000);
+    setTimeout(() => bingo(likes, repeatCount), 1000);
 }
 
-function bingo(likes) {
-    var min = likes.length*5 - 3;
-    var max = likes.length*4 - 1;
-    console.log("Likes: " + likes.length + ", Min: " + (min+3) + ", Max: " + (min+max+3) + ", Total: " + (likes.length*10));
+const elementHeight = 70;
+function bingo(likes, repeatCount) {
+    let arr = new Uint16Array(2);
+    crypto.getRandomValues(arr);
+    let [personIndex, repeatIndex] = arr;
+    personIndex %= likes.length;
+    repeatIndex = repeatIndex % (repeatCount/2) + repeatCount/2;
 
-    var random = Math.round(Math.random()*max + min);
-    var winner = random+3;
-    var winnerName = document.getElementsByTagName("li")[winner].innerText;
+    const winnerIndex = personIndex+repeatIndex*likes.length;
+    let winnerName = document.getElementsByTagName("li")[winnerIndex].innerText;
+    console.log("repeatIndex", repeatIndex, "winnerIndex", winnerIndex);
 
-    console.log("Random: " + winner + " (" + (winner % likes.length) + ")");
-    console.log("Winner: " + winnerName);
+    console.log("Likes: " + likes.length,
+        "Total: " + (likes.length*repeatIndex),
+        "Repeat count " + repeatCount);
+
     
-    document.getElementsByTagName("ul")[0].style.top = (-random*70) + "px";
+    document.getElementsByTagName("ul")[0].style.transform = "translateY(" + (-(winnerIndex-3)*elementHeight) + "px)"
     document.getElementById("winner").innerHTML = winnerName;
 
     setTimeout(function() {
-        document.getElementsByTagName("li")[winner].setAttribute("class", "winner");
+        document.getElementsByTagName("li")[winnerIndex].setAttribute("class", "winner");
     }, 10000);
     
     setTimeout(function() {
