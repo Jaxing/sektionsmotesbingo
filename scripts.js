@@ -41,15 +41,14 @@ function bingo(likes, repeatCount) {
     personIndex %= likes.length;
     repeatIndex = repeatIndex % (repeatCount/2) + repeatCount/2;
 
-    const winnerIndex = personIndex+repeatIndex*likes.length;
-    let winnerName = document.getElementsByTagName("li")[winnerIndex].innerText;
-    console.log("repeatIndex", repeatIndex, "winnerIndex", winnerIndex);
-
     console.log("Likes: " + likes.length,
         "Total: " + (likes.length*repeatIndex),
         "Repeat count " + repeatCount);
 
-    
+    const winnerIndex = personIndex+repeatIndex*likes.length;
+    console.log("repeatIndex", repeatIndex, "winnerIndex", winnerIndex);
+    let winnerName = document.getElementsByTagName("li")[winnerIndex].innerText;
+
     document.getElementsByTagName("ul")[0].style.transform = "translateY(" + (-(winnerIndex-3)*elementHeight) + "px)"
     document.getElementById("winner").innerHTML = winnerName;
 
