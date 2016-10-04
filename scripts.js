@@ -22,7 +22,7 @@ window.fbAsyncInit = function() {
 
 function loadpage(likes) {
     const repeatCount = Math.round(Math.max(100/likes.length, 2));
-    for (var i=0; i < repeatCount; i++) {
+    for (var i=0; i < repeatCount + 1; i++) {
         for (var j=0; j<likes.length; j++) {
             var li = document.createElement("li");
             li.innerHTML = '<div class="fb-reaction fb-'+likes[j].type+'"></div>' + ' ' + likes[j].name;
