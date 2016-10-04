@@ -86,7 +86,8 @@ div#popup div span:first-child {
 
 #winner {
     font-size: 1.5em;
-    color: #0000ff;
+    color: #ffff00;
+    animation: neon 1.5s ease-in-out infinite alternate;
 }
 
 .blink {
@@ -117,22 +118,31 @@ div#popup div span:first-child {
 }
 
 .fb-LOVE {
-    background-position: -124px -111px;
+    background-position: -124px -109px;
 }
 
 .fb-HAHA {
-    background-position: -186px -111px;
+    background-position: -185px -110px;
 
 }
 
 .fb-WOW {
-    background-position: -248px -111px;
+    background-position: -246px -111px;
 }
 
 .fb-SAD {
-    background-position: -308px -111px;
+    background-position: -308px -110px;
 }
 
 .fb-ANGRY {
-    background-position: -369px -111px;
+    background-position: -369px -110px;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
 }
